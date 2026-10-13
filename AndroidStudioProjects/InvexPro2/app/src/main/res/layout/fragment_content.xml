@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- SECCIÓN 1: PRODUCTO (ScrollView) -->
+    <ScrollView android:id="@+id/layout_producto" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="visible">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_width="150dp" android:layout_height="150dp" android:src="@drawable/producto_principal" android:layout_gravity="center"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Código: INV-001" android:textSize="18sp" android:layout_marginTop="8dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Categoría: Electrónica" android:textSize="18sp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Stock: 150 unidades" android:textSize="18sp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ubicación: Pasillo 3, Estante B" android:textSize="18sp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Descripción: Componente principal para ensamblaje de servidores..." android:textSize="16sp" android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- SECCIÓN 2: FOTOS (ListView/RecyclerView) -->
+    <LinearLayout android:id="@+id/layout_fotos" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:visibility="gone">
+        <TextView android:id="@+id/tv_foto_descripcion" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Selecciona una foto para ver su descripción" android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+        <ListView android:id="@+id/list_fotos" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!-- SECCIÓN 3: VIDEO (VideoView) -->
+    <LinearLayout android:id="@+id/layout_video" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:visibility="gone" android:gravity="center">
+        <VideoView android:id="@+id/video_view" android:layout_width="match_parent" android:layout_height="300dp" />
+    </LinearLayout>
+
+    <!-- SECCIÓN 4: PROVEEDOR (WebView) -->
+    <LinearLayout android:id="@+id/layout_proveedor" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:visibility="gone">
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/et_url" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="https://www.proveedor.com" android:inputType="textUri"/>
+            <Button android:id="@+id/btn_cargar_url" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cargar"/>
+        </LinearLayout>
+        <WebView android:id="@+id/web_view" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
